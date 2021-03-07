@@ -22,4 +22,11 @@ public class TasksService {
 		List<Tasks> list = repository.findAllByOrderByTextAsc();
 		return list.stream().map(x -> new TasksDTO(x)).collect(Collectors.toList());		
 	}
+	
+	@Transactional
+	public TasksDTO insert(TasksDTO dto) {
+		Tasks tasks = new Tasks(null, dto.getText(), dto.getDay(), dto.isReminder());
+		tasks = repository.save(tasks);
+		return new TasksDTO(tasks);
+	}
 }
