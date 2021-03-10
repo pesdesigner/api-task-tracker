@@ -1,9 +1,13 @@
 package com.graficoeweb.tasktracker.dto;
 
+
 import java.io.Serializable;
+
+import org.springframework.stereotype.Service;
 
 import com.graficoeweb.tasktracker.entities.Tasks;
 
+@Service
 public class TasksDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
